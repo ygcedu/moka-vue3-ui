@@ -11,15 +11,9 @@ export default {
     value: Boolean
   },
   setup(props, context) {
-    // 1. 内部数据
-    // const toggle=()=>{
-    //   checked.value = !checked.value
-    // }
-
-    // 2. 父子数据
     const toggle = () => {
-      // 自定义一个 input 事件，通知父组件修改 value
-      context.emit('input', !props.value);
+      // 定义一个 update:value 事件(为了使用 Vue 的 v-model 功能，这里不能改成其他的！)，通知父组件修改 value
+      context.emit('update:value', !props.value);
       // this.$emit();
     };
     return {toggle};

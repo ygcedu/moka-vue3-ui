@@ -1,5 +1,5 @@
 <template>
   <div>
-    <p>Switch 示例</p>
+    <p>Tabs 示例</p>
   </div>
 </template>

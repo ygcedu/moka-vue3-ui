@@ -1,17 +1,28 @@
 <template>
-  <button @click="toggle" :class="{checked:x}"><span></span></button>
+  <button @click="toggle" :class="{checked:value}">
+    <span></span>
+  </button>
 </template>
 
 <script lang="ts">
-import {ref} from 'vue';
 
 export default {
-  setup() {
-    const checked = ref(false);
+  props: {
+    value: Boolean
+  },
+  setup(props, context) {
+    // 1. 内部数据
+    // const toggle=()=>{
+    //   checked.value = !checked.value
+    // }
+
+    // 2. 父子数据
     const toggle = () => {
-      checked.value = !checked.value;
+      // 自定义一个 input 事件，通知父组件修改 value
+      context.emit('input', !props.value);
+      // this.$emit();
     };
-    return {x: checked, toggle};
+    return {toggle};
   }
 };
 </script>

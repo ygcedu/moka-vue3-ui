@@ -1,5 +1,6 @@
 <template>
   <button class="arw-button" :class="classes" :disabled="disabled">
+    <span v-if="loading" class="arw-loadingIndicator"></span>
     <slot/>
   </button>
 </template>
@@ -24,6 +25,10 @@ export default {
       type: Boolean,
       default: false,
     },
+    loading: {
+      type: Boolean,
+      default: false
+    }
   },
   setup(props) {
     const {theme, size, level} = props;
@@ -93,37 +98,31 @@ $grey: grey;
       background: darken(white, 5%);
     }
   }
-
   &.arw-size-big {
     font-size: 24px;
     height: 48px;
     padding: 0 16px;
   }
-
   &.arw-size-small {
     font-size: 12px;
     height: 20px;
     padding: 0 4px;
   }
-
   &.arw-theme-button {
     &.arw-level-main {
       background: $blue;
       color: white;
       border-color: $blue;
-
       &:hover,
       &:focus {
         background: darken($blue, 10%);
         border-color: darken($blue, 10%);
       }
     }
-
     &.arw-level-danger {
       background: $red;
       border-color: $red;
       color: white;
-
       &:hover,
       &:focus {
         background: darken($red, 10%);
@@ -131,43 +130,35 @@ $grey: grey;
       }
     }
   }
-
   &.arw-theme-link {
     &.arw-level-danger {
       color: $red;
-
       &:hover,
       &:focus {
         color: darken($red, 10%);
       }
     }
   }
-
   &.arw-theme-text {
     &.arw-level-main {
       color: $blue;
-
       &:hover,
       &:focus {
         color: darken($blue, 10%);
       }
     }
-
     &.arw-level-danger {
       color: $red;
-
       &:hover,
       &:focus {
         color: darken($red, 10%);
       }
     }
   }
-
   &.arw-theme-button {
     &[disabled] {
       cursor: not-allowed;
       color: $grey;
-
       &:hover {
         border-color: $grey;
       }
@@ -179,6 +170,27 @@ $grey: grey;
       cursor: not-allowed;
       color: $grey;
     }
+  }
+
+  > .arw-loadingIndicator {
+    width: 14px;
+    height: 14px;
+    display: inline-block;
+    margin-right: 4px;
+    border-radius: 8px;
+    border-color: $blue $blue $blue transparent;
+    border-style: solid;
+    border-width: 2px;
+    animation: arw-spin 1s infinite linear;
+  }
+}
+
+@keyframes arw-spin {
+  0% {
+    transform: rotate(0deg)
+  }
+  100% {
+    transform: rotate(360deg)
   }
 }
 </style>

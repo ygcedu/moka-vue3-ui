@@ -14,19 +14,19 @@ export default {
     },
     size: {
       type: String,
-      default: 'normal'
-    }
+      default: 'normal',
+    },
   },
   setup(props) {
     const {theme, size} = props;
     const classes = computed(() => {
       return {
         [`arw-theme-${theme}`]: theme,
-        [`arw-size-${size}`]: size
+        [`arw-size-${size}`]: size,
       };
     });
     return {classes};
-  }
+  },
 };
 </script>
 <style lang="scss">
@@ -67,7 +67,6 @@ $radius: 4px;
     border-color: transparent;
     box-shadow: none;
     color: $blue;
-
     &:hover,
     &:focus {
       color: lighten($blue, 10%);
@@ -85,18 +84,16 @@ $radius: 4px;
     }
   }
 
-  &.arw-theme-button {
-    &.arw-size-big {
-      font-size: 24px;
-      height: 48px;
-      padding: 0 16px
-    }
+  &.arw-size-big {
+    font-size: 24px;
+    height: 48px;
+    padding: 0 16px;
+  }
 
-    &.arw-size-small {
-      font-size: 12px;
-      height: 20px;
-      padding: 0 4px;
-    }
+  &.arw-size-small {
+    font-size: 12px;
+    height: 20px;
+    padding: 0 4px;
   }
 }
 </style>

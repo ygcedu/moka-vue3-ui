@@ -1,16 +1,32 @@
 <template>
-  <button class="arw-button" :class="{[`arw-theme-${theme}`]: theme}">
+  <button class="arw-button" :class="classes">
     <slot/>
   </button>
 </template>
 <script lang="ts">
+import {computed} from 'vue';
+
 export default {
   props: {
     theme: {
       type: String,
       default: 'button',
     },
+    size: {
+      type: String,
+      default: 'normal'
+    }
   },
+  setup(props) {
+    const {theme, size} = props;
+    const classes = computed(() => {
+      return {
+        [`arw-theme-${theme}`]: theme,
+        [`arw-size-${size}`]: size
+      };
+    });
+    return {classes};
+  }
 };
 </script>
 <style lang="scss">
@@ -36,27 +52,24 @@ $radius: 4px;
   & + & {
     margin-left: 8px;
   }
-
   &:hover,
   &:focus {
     color: $blue;
     border-color: $blue;
   }
-
   &:focus {
     outline: none;
   }
-
   &::-moz-focus-inner {
     border: 0;
   }
-
   &.arw-theme-link {
     border-color: transparent;
     box-shadow: none;
     color: $blue;
 
-    &:hover, &:focus {
+    &:hover,
+    &:focus {
       color: lighten($blue, 10%);
     }
   }
@@ -66,8 +79,23 @@ $radius: 4px;
     box-shadow: none;
     color: inherit;
 
-    &:hover, &:focus {
-      background: darken(white, 5%);;
+    &:hover,
+    &:focus {
+      background: darken(white, 5%);
+    }
+  }
+
+  &.arw-theme-button {
+    &.arw-size-big {
+      font-size: 24px;
+      height: 48px;
+      padding: 0 16px
+    }
+
+    &.arw-size-small {
+      font-size: 12px;
+      height: 20px;
+      padding: 0 4px;
     }
   }
 }

@@ -1,8 +1,9 @@
 <template>
-  <button class="arw-button" :class="{[`theme-${theme}`]: theme}">
+  <button class="arw-button" :class="{[`arw-theme-${theme}`]: theme}">
     <slot/>
   </button>
 </template>
+
 <script lang="ts">
 export default {
   props: {
@@ -13,13 +14,14 @@ export default {
   },
 };
 </script>
-<style lang="scss" scoped>
+
+<style lang="scss">
 $h: 32px;
 $border-color: #d9d9d9;
 $color: #333;
 $blue: #40a9ff;
 $radius: 4px;
-.gulu-button {
+.arw-button {
   box-sizing: border-box;
   height: $h;
   padding: 0 12px;
@@ -48,6 +50,7 @@ $radius: 4px;
     outline: none;
   }
 
+  // firefox 适配 focus
   &::-moz-focus-inner {
     border: 0;
   }

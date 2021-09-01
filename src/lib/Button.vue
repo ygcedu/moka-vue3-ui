@@ -1,5 +1,5 @@
 <template>
-  <button class="arw-button" :class="classes">
+  <button class="arw-button" :class="classes" :disabled="disabled">
     <slot/>
   </button>
 </template>
@@ -19,6 +19,10 @@ export default {
     level: {
       type: String,
       default: 'normal',
+    },
+    disabled: {
+      type: Boolean,
+      default: false,
     },
   },
   setup(props) {
@@ -41,6 +45,7 @@ $color: #333;
 $blue: #40a9ff;
 $radius: 4px;
 $red: red;
+$grey: grey;
 .arw-button {
   box-sizing: border-box;
   height: $h;
@@ -56,17 +61,14 @@ $red: red;
   border-radius: $radius;
   box-shadow: 0 1px 0 fade-out(black, 0.95);
   transition: background 250ms;
-
   & + & {
     margin-left: 8px;
   }
-
   &:hover,
   &:focus {
     color: $blue;
     border-color: $blue;
   }
-
   &:focus {
     outline: none;
   }
@@ -158,6 +160,24 @@ $red: red;
       &:focus {
         color: darken($red, 10%);
       }
+    }
+  }
+
+  &.arw-theme-button {
+    &[disabled] {
+      cursor: not-allowed;
+      color: $grey;
+
+      &:hover {
+        border-color: $grey;
+      }
+    }
+  }
+
+  &.arw-theme-link, &.arw-theme-text {
+    &[disabled] {
+      cursor: not-allowed;
+      color: $grey;
     }
   }
 }

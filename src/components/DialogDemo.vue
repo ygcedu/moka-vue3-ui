@@ -3,7 +3,10 @@
   <h1>示例1</h1>
   <Button @click="toggle">toggle</Button>
   <!--<Dialog :visible="x" @update:visible="x=$event"></Dialog>-->
-  <Dialog v-model:visible="x" :closeOnClickOverlay="false" :ok="f1" :cancel="f2"></Dialog>
+  <Dialog v-model:visible="x" :closeOnClickOverlay="false" :ok="f1" :cancel="f2">
+    <div>你好</div>
+    <div>hi</div>
+  </Dialog>
 </template>
 
 <script lang="ts">
@@ -21,11 +24,9 @@ export default {
       x.value = !x.value;
     };
     const f1 = () => {
-      console.log(1);
       return false;
     };
     const f2 = () => {
-      console.log(2);
     };
     return {
       x,

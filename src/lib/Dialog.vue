@@ -3,12 +3,12 @@
     <div class="arw-dialog-overlay" @click="onClickOverlay"></div>
     <div class="arw-dialog-wrapper">
       <div class="arw-dialog">
-        <header>标题
+        <header>
+          {{ title }}
           <span @click="close" class="arw-dialog-close"></span>
         </header>
         <main>
-          <p>第一行字</p>
-          <p>第二行字</p>
+          <slot/>
         </main>
         <footer>
           <Button level="main" @click="ok">OK</Button>
@@ -24,6 +24,10 @@ import Button from './Button.vue';
 
 export default {
   props: {
+    title: {
+      type: String,
+      default: '提示'
+    },
     visible: {
       type: Boolean,
       default: false

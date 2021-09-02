@@ -10,7 +10,7 @@
     </div>
     <div class="arw-tabs-content">
       {{ current }}
-      <component class="arw-tabs-content-item" :is="current"/>
+      <component class="arw-tabs-content-item" :is="current" :key="selected"/>
     </div>
   </div>
 </template>

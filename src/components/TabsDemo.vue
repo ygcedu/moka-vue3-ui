@@ -1,7 +1,5 @@
 <template>
-  <div>
-    <p>Tabs 示例</p>
-  </div>
+  <div>Tabs 示例</div>
   <h1>示例1</h1>
   <Tabs>
     <Tab title="导航1">内容1</Tab>

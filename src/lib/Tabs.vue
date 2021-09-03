@@ -18,7 +18,7 @@
 
 <script lang="ts">
 import Tab from './Tab.vue';
-import {computed, onMounted, onUpdated, ref} from 'vue';
+import {computed, ref, watchEffect} from 'vue';
 
 export default {
   props: {
@@ -31,18 +31,22 @@ export default {
     const indicator = ref<HTMLDivElement>(null);
     const container = ref<HTMLDivElement>(null);
     const x = () => {
-      const {width} = selectedItem.value.getBoundingClientRect();
+      const {width, left: left2} = selectedItem.value.getBoundingClientRect();
       indicator.value.style.width = width + 'px';
       const {left: left1} = container.value.getBoundingClientRect();
-      const {left: left2} = selectedItem.value.getBoundingClientRect();
+      // const {left: left2} = selectedItem.value.getBoundingClientRect();
       const left = left2 - left1;
       indicator.value.style.left = left + 'px';
     };
 
     // 只在第一次渲染执行
-    onMounted(x);
+    // onMounted(x);
 
-    onUpdated(x);
+    // 后面更新才执行
+    // onUpdated(x);
+
+    // 每次渲染都执行
+    watchEffect(x);
 
     const defaults = context.slots.default();
     defaults.forEach((tag) => {

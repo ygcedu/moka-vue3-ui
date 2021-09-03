@@ -9,16 +9,14 @@
       <div class="arw-tabs-nav-indicator" ref="indicator"></div>
     </div>
     <div class="arw-tabs-content">
-      <component class="arw-tabs-content-item" :class="{selected: c.props.title === selected }" v-for="c in defaults"
-                 :is="c"/>
-
+      <component :is="current" :key="current.props.title"/>
     </div>
   </div>
 </template>
 
 <script lang="ts">
 import Tab from './Tab.vue';
-import {onMounted, ref, watchEffect} from 'vue';
+import {computed, onMounted, ref, watchEffect} from 'vue';
 
 export default {
   props: {
@@ -35,6 +33,7 @@ export default {
     onMounted(
       () => {
         watchEffect(() => {
+          // 析构赋值重命名
           const {width, left: left2} = selectedItem.value.getBoundingClientRect();
           indicator.value.style.width = width + 'px';
           const {left: left1} = container.value.getBoundingClientRect();
@@ -50,6 +49,9 @@ export default {
         throw new Error('Tabs 子标签必须是 Tab');
       }
     });
+    const current = computed(() => {
+      return defaults.find(tag => tag.props.title === props.selected);
+    });
     const titles = defaults.map((tag) => {
       return tag.props.title;
     });
@@ -62,7 +64,8 @@ export default {
       select,
       selectedItem,
       indicator,
-      container
+      container,
+      current
     };
   }
 }
@@ -106,12 +109,6 @@ $border-color: #d9d9d9;
   }
   &-content {
     padding: 8px 0;
-    &-item {
-      display: none;
-      &.selected {
-        display: block;
-      }
-    }
   }
 }
 </style>

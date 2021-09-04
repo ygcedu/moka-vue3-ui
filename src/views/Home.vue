@@ -40,6 +40,10 @@ $color: #109790;
 
 .topnavAndBanner {
   background: linear-gradient(145deg, rgba(227, 255, 253, 1) 0%, rgba(183, 233, 230, 1) 100%);
+  // 方案 1：使用 border-radius
+  // border-bottom-left-radius: 50% 40px;
+  // border-bottom-right-radius: 50% 40px;
+  clip-path: ellipse(80% 60% at 50% 40%);
 }
 
 .features {

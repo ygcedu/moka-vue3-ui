@@ -50,13 +50,19 @@ export default {
 };
 </script>
 <style lang="scss" scoped>
+.router-link-active {
+  text-decoration: underline;
+}
+
 .layout {
   display: flex;
   flex-direction: column;
   height: 100vh;
+
   > .nav {
     flex-shrink: 0;
   }
+
   > .content {
     flex-grow: 1;
     padding-top: 60px;

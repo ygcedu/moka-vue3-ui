@@ -39,7 +39,7 @@ export default {
           const {left: left1} = container.value.getBoundingClientRect();
           const left = left2 - left1;
           indicator.value.style.left = left + 'px';
-        });
+        }, {flush: 'post'});
       }
     );
 

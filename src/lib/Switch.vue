@@ -1,5 +1,5 @@
 <template>
-  <button class="arw-switch" @click="toggle" :class="{'arw-checked':value}">
+  <button class="mk-switch" @click="toggle" :class="{'mk-checked':value}">
     <span></span>
   </button>
 </template>
@@ -24,7 +24,7 @@ export default {
 <style lang="scss">
 $h: 22px;
 $h2: $h - 4px;
-.arw-switch {
+.mk-switch {
   height: $h;
   width: $h*2;
   border: none;
@@ -43,7 +43,7 @@ $h2: $h - 4px;
     transition: all 250ms;
   }
 
-  &.arw-checked {
+  &.mk-checked {
     background: #1890ff;
 
     > span {
@@ -61,7 +61,7 @@ $h2: $h - 4px;
     }
   }
 
-  &.arw-checked:active {
+  &.mk-checked:active {
     > span {
       width: $h2 + 4px;
       margin-left: -4px;

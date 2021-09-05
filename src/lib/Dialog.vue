@@ -1,12 +1,12 @@
 <template>
   <template v-if="visible">
     <Teleport to="body">
-      <div class="arw-dialog-overlay" @click="onClickOverlay"></div>
-      <div class="arw-dialog-wrapper">
-        <div class="arw-dialog">
+      <div class="mk-dialog-overlay" @click="onClickOverlay"></div>
+      <div class="mk-dialog-wrapper">
+        <div class="mk-dialog">
           <header>
             <slot name="title"/>
-            <span @click="close" class="arw-dialog-close"></span>
+            <span @click="close" class="mk-dialog-close"></span>
           </header>
           <main>
             <slot name="content"/>
@@ -77,7 +77,7 @@ export default {
 <style lang="scss">
 $radius: 4px;
 $border-color: #d9d9d9;
-.arw-dialog {
+.mk-dialog {
   background: white;
   border-radius: $radius;
   box-shadow: 0 0 3px fade_out(black, 0.5);

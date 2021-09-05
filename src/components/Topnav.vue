@@ -2,7 +2,7 @@
   <div class="topnav">
     <router-link to="/" class="logo">
       <svg class="icon">
-        <use xlink:href="#icon-arrow-down"></use>
+        <use xlink:href="#icon-moka"></use>
       </svg>
     </router-link>
     <ul class="menu">

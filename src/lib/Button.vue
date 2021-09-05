@@ -1,6 +1,6 @@
 <template>
-  <button class="arw-button" :class="classes" :disabled="disabled">
-    <span v-if="loading" class="arw-loadingIndicator"></span>
+  <button class="mk-button" :class="classes" :disabled="disabled">
+    <span v-if="loading" class="mk-loadingIndicator"></span>
     <slot/>
   </button>
 </template>
@@ -34,9 +34,9 @@ export default {
     const {theme, size, level} = props;
     const classes = computed(() => {
       return {
-        [`arw-theme-${theme}`]: theme,
-        [`arw-size-${size}`]: size,
-        [`arw-level-${level}`]: level,
+        [`mk-theme-${theme}`]: theme,
+        [`mk-size-${size}`]: size,
+        [`mk-level-${level}`]: level,
       };
     });
     return {classes};
@@ -51,7 +51,7 @@ $blue: #40a9ff;
 $radius: 4px;
 $red: red;
 $grey: grey;
-.arw-button {
+.mk-button {
   box-sizing: border-box;
   height: $h;
   padding: 0 12px;
@@ -74,55 +74,67 @@ $grey: grey;
     color: $blue;
     border-color: $blue;
   }
+
   &:focus {
     outline: none;
   }
+
   &::-moz-focus-inner {
     border: 0;
   }
-  &.arw-theme-link {
+
+  &.mk-theme-link {
     border-color: transparent;
     box-shadow: none;
     color: $blue;
+
     &:hover,
     &:focus {
       color: lighten($blue, 10%);
     }
   }
-  &.arw-theme-text {
+
+  &.mk-theme-text {
     border-color: transparent;
     box-shadow: none;
     color: inherit;
+
     &:hover,
     &:focus {
       background: darken(white, 5%);
     }
   }
-  &.arw-size-big {
+
+  &.mk-size-big {
     font-size: 24px;
     height: 48px;
     padding: 0 16px;
   }
-  &.arw-size-small {
+
+  &.mk-size-small {
     font-size: 12px;
     height: 20px;
     padding: 0 4px;
   }
-  &.arw-theme-button {
-    &.arw-level-main {
+
+  &.mk-theme-button {
+    &.mk-level-main {
       background: $blue;
       color: white;
       border-color: $blue;
+
       &:hover,
       &:focus {
         background: darken($blue, 10%);
         border-color: darken($blue, 10%);
       }
     }
-    &.arw-level-danger {
+
+    &.mk-level-danger {
       background: $red;
       border-color: $red;
       color: white;
+
       &:hover,
       &:focus {
         background: darken($red, 10%);
@@ -130,49 +142,57 @@ $grey: grey;
       }
     }
   }
-  &.arw-theme-link {
-    &.arw-level-danger {
+
+  &.mk-theme-link {
+    &.mk-level-danger {
       color: $red;
+
       &:hover,
       &:focus {
         color: darken($red, 10%);
       }
     }
   }
-  &.arw-theme-text {
-    &.arw-level-main {
+
+  &.mk-theme-text {
+    &.mk-level-main {
       color: $blue;
+
       &:hover,
       &:focus {
         color: darken($blue, 10%);
       }
     }
-    &.arw-level-danger {
+
+    &.mk-level-danger {
       color: $red;
+
       &:hover,
       &:focus {
         color: darken($red, 10%);
       }
     }
   }
-  &.arw-theme-button {
+
+  &.mk-theme-button {
     &[disabled] {
       cursor: not-allowed;
       color: $grey;
+
       &:hover {
         border-color: $grey;
       }
     }
   }
 
-  &.arw-theme-link, &.arw-theme-text {
+  &.mk-theme-link, &.mk-theme-text {
     &[disabled] {
       cursor: not-allowed;
       color: $grey;
     }
   }
 
-  > .arw-loadingIndicator {
+  > .mk-loadingIndicator {
     width: 14px;
     height: 14px;
     display: inline-block;
@@ -181,11 +201,11 @@ $grey: grey;
     border-color: $blue $blue $blue transparent;
     border-style: solid;
     border-width: 2px;
-    animation: arw-spin 1s infinite linear;
+    animation: mk-spin 1s infinite linear;
   }
 }
 
-@keyframes arw-spin {
+@keyframes mk-spin {
   0% {
     transform: rotate(0deg)
   }

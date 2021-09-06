@@ -7,6 +7,12 @@ export default {
   base: './',
   assetsDir: 'assets',
   plugins: [md()],
+  // css预处理器
+  cssPreprocessOptions: {
+    scss: {
+      additionalData: `@import "./src/lib/vars.scss";`,
+    },
+  },
   vueCustomBlockTransforms: {
     demo: (options) => {
       const {code, path} = options;

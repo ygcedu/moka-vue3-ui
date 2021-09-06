@@ -44,13 +44,8 @@ export default {
 };
 </script>
 <style lang="scss">
-$h: 32px;
-$border-color: #d9d9d9;
-$color: #333;
-$blue: #40a9ff;
-$radius: 4px;
-$red: red;
-$grey: grey;
+//@import "../lib/vars";
+
 .mk-button {
   box-sizing: border-box;
   height: $h;

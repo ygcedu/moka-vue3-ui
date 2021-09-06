@@ -75,8 +75,6 @@ export default {
 </script>
 
 <style lang="scss">
-$radius: 4px;
-$border-color: #d9d9d9;
 .mk-dialog {
   background: white;
   border-radius: $radius;

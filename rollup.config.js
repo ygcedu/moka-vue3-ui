@@ -22,7 +22,11 @@ export default {
     vue({
       include: /\.vue$/,
     }),
-    scss({include: /\.scss$/, sass: dartSass}),
+    scss({
+      include: /\.scss$/,
+      sass: dartSass,
+      prefix: `@import './src/lib/vars.scss';`,
+    }),
     esbuild({
       include: /\.[jt]s$/,
       minify: process.env.NODE_ENV === 'production',

@@ -7,7 +7,12 @@
   "main": "dist/lib/moka.js",
   "scripts": {
     "dev": "vite",
-    "build": "vite build"
+    "build": "vite build",
+    "deploy:github": "sh scripts/deploy-github.sh",
+    "deploy:gitee": "sh scripts/deploy-gitee.sh",
+    "deploy": "yarn deploy:gitee && yarn deploy:github",
+    "rollup": "rollup -c",
+    "publish": "npm publish"
   },
   "resolutions": {
     "node-sass": "npm:sass@^1.26.11"

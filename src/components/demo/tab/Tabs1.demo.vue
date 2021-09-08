@@ -9,7 +9,7 @@
 </template>
 
 <script lang="ts">
-import {Tab, Tabs} from '../lib/index';
+import {Tab, Tabs} from '../../../lib';
 import {ref} from 'vue';
 
 export default {

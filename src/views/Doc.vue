@@ -21,6 +21,12 @@
             <router-link to="/doc/switch">Switch 组件</router-link>
           </li>
           <li>
+            <router-link to="/doc/switch2">Switch2 组件</router-link>
+          </li>
+          <li>
+            <router-link to="/doc/switch3">Switch3 组件</router-link>
+          </li>
+          <li>
             <router-link to="/doc/button">Button 组件</router-link>
           </li>
           <li>

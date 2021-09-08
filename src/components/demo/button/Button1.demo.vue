@@ -11,7 +11,7 @@
 
 <script lang="ts">
 // hack:最好换成用户可以直接使用的形式
-import {Button} from '../lib/index';
+import {Button} from '../../../lib/index';
 
 export default {
   components: {

@@ -47,7 +47,7 @@ export default {
     defaults.forEach((tag) => {
       // @ts-ignore
       if (tag.type.name !== Tab.name) {
-        throw new Error('Tabs 子标签必须是 Tab');
+        throw new Error('Tabs 子标签必须是 tab');
       }
     });
     const current = computed(() => {

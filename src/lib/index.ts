@@ -6,3 +6,4 @@ export {default as Tabs} from './tab/Tabs.vue';
 export {default as Tab} from './tab/Tab.vue';
 export {default as Dialog} from './dialog/Dialog.vue';
 export {openDialog as openDialog} from './dialog/openDialog';
+export {titles} from './data';

@@ -2,7 +2,7 @@
   <div class="layout">
     <Topnav toggleMenuButtonVisible class="nav"/>
     <div class="content">
-      <aside v-if="asideVisible">
+      <aside :class="{visible:asideVisible}">
         <h2>文档</h2>
         <ol>
           <li>
@@ -61,64 +61,115 @@ $aside-index: 10;
   display: flex;
   flex-direction: column;
   height: 100vh;
+  overflow-x: hidden;
 
   > .nav {
-    flex-shrink: 0;
+    flex: 0;
   }
 
   > .content {
-    flex-grow: 1;
+    display: flex;
+    flex: 1;
     padding-top: 60px;
     padding-left: 156px;
-    @media (max-width: 500px) {
+
+    aside {
+      position: fixed;
+      top: 0;
+      left: 0;
+      margin-top: 70px;
+      width: 260px;
+      height: 100%;
+      overflow-x: hidden;
+      overflow-y: scroll;
+      border-right: 1px solid #e8e8e8;
+      padding-bottom: 32px;
+      z-index: $aside-index;
+      box-shadow: 5px 0 5px rgb(51 51 51 / 10%);
+
+      > h2 {
+        margin-bottom: 4px;
+        line-height: 22px;
+        padding: 10px;
+        font-size: 16px;
+        font-weight: 700;
+      }
+
+      > ol {
+        > li {
+          position: relative;
+          width: 100%;
+          font-size: 14px;
+
+          > a {
+            display: block;
+            padding: 12px 20px;
+            cursor: pointer;
+            color: #333;
+
+            &:hover {
+              background: #e5f2fa;
+              border-bottom: none;
+              text-decoration: none;
+            }
+          }
+
+          .router-link-active {
+            background-color: #e5f2fa;
+            border-right: none;
+
+            &:after {
+              content: '';
+              position: absolute;
+              top: 0;
+              right: 0;
+              height: 100%;
+              border-right: 3px solid #6b9ab8;
+            }
+          }
+        }
+      }
+    }
+
+    main {
+      overflow: auto;
+      flex: 1;
+      padding-top: 20px;
+      padding-left: 130px;
+      padding-right: 20px;
+    }
+  }
+}
+
+::v-deep {
+  .topnav {
+    background: #fff;
+    box-shadow: 0 5px 5px rgb(51 51 51 / 10%);
+  }
+}
+
+@media (max-width: 500px) {
+  .layout {
+    > .content {
       padding-left: 0;
-    }
-  }
-}
-.content {
-  display: flex;
-  > aside {
-    flex-shrink: 0;
-  }
-  > main {
-    flex-grow: 1;
-    padding: 16px;
-    background: white;
-  }
-}
-aside {
-  background: lightblue;
-  width: 150px;
-  padding: 16px 0;
-  position: fixed;
-  top: 0;
-  left: 0;
-  padding-top: 70px;
-  height: 100%;
-  z-index: $aside-index;
 
-  > h2 {
-    margin-bottom: 4px;
-    padding: 0 16px;
-  }
+      aside {
+        width: 180px;
+        background-color: #fff;
+        transition: all 0.25s ease;
+        transform: translateX(-200px);
 
-  > ol {
-    > li {
-      //padding: 4px 0;
-
-      > a {
-        display: block;
-        padding: 4px 16px;
-        text-decoration: none;
+        &.visible {
+          transform: translateX(0px);
+        }
       }
 
-      .router-link-active {
-        background: white;;
+      main {
+        overflow: auto;
+        padding: 20px 8px;
+        margin: 0 auto;
       }
     }
   }
-}
-main {
-  overflow: auto;
 }
 </style>

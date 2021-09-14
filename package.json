@@ -20,11 +20,13 @@
   "dependencies": {
     "github-markdown-css": "^4.0.0",
     "marked": "^1.1.1",
+    "nprogress": "^0.2.0",
     "prismjs": "^1.24.1",
     "vue": "3.0.0",
     "vue-router": "4.0.0-beta.3"
   },
   "devDependencies": {
+    "@types/nprogress": "^0.2.0",
     "@vue/compiler-sfc": "3.0.0",
     "rollup-plugin-esbuild": "^2.5.0",
     "rollup-plugin-scss": "^2.6.0",

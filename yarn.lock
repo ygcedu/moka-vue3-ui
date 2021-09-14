@@ -255,6 +255,11 @@
   resolved "https://registry.nlark.com/@types/node/download/@types/node-16.7.6.tgz?cache=0&sync_timestamp=1630253182547&other_urls=https%3A%2F%2Fregistry.nlark.com%2F%40types%2Fnode%2Fdownload%2F%40types%2Fnode-16.7.6.tgz#8666478db8095aa66e25b7e469f3e7b53ea2855e"
   integrity sha1-hmZHjbgJWqZuJbfkafPntT6ihV4=
 
+"@types/nprogress@^0.2.0":
+  version "0.2.0"
+  resolved "https://registry.nlark.com/@types/nprogress/download/@types/nprogress-0.2.0.tgz?cache=0&sync_timestamp=1629715977927&other_urls=https%3A%2F%2Fregistry.nlark.com%2F%40types%2Fnprogress%2Fdownload%2F%40types%2Fnprogress-0.2.0.tgz#86c593682d4199212a0509cc3c4d562bbbd6e45f"
+  integrity sha1-hsWTaC1BmSEqBQnMPE1WK7vW5F8=
+
 "@types/qs@*":
   version "6.9.7"
   resolved "https://registry.nlark.com/@types/qs/download/@types/qs-6.9.7.tgz?cache=0&sync_timestamp=1629708830489&other_urls=https%3A%2F%2Fregistry.nlark.com%2F%40types%2Fqs%2Fdownload%2F%40types%2Fqs-6.9.7.tgz#63bb7d067db107cc1e457c303bc25d511febf6cb"
@@ -1555,6 +1560,11 @@ npm-run-path@^4.0.0:
   integrity sha1-t+zR5e1T2o43pV4cImnguX7XSOo=
   dependencies:
     path-key "^3.0.0"
+
+nprogress@^0.2.0:
+  version "0.2.0"
+  resolved "https://registry.npm.taobao.org/nprogress/download/nprogress-0.2.0.tgz#cb8f34c53213d895723fcbab907e9422adbcafb1"
+  integrity sha1-y480xTIT2JVyP8urkH6UIq28r7E=
 
 on-finished@^2.3.0:
   version "2.3.0"

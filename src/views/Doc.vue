@@ -81,11 +81,10 @@ $aside-index: 10;
       width: 260px;
       height: 100%;
       overflow-x: hidden;
-      overflow-y: scroll;
+      overflow-y: auto;
       border-right: 1px solid #e8e8e8;
       padding-bottom: 32px;
       z-index: $aside-index;
-      box-shadow: 5px 0 5px rgb(51 51 51 / 10%);
 
       > h2 {
         margin-bottom: 4px;
@@ -119,12 +118,23 @@ $aside-index: 10;
             border-right: none;
 
             &:after {
-              content: '';
+              content: "";
               position: absolute;
+              animation: .8s stretchY;
               top: 0;
               right: 0;
               height: 100%;
-              border-right: 3px solid #6b9ab8;
+              border-right: 3px solid #109790;
+            }
+
+            @keyframes stretchY {
+              0% {
+                transform: rotateX(90deg)
+              }
+
+              100% {
+                transform: rotateX(0)
+              }
             }
           }
         }
@@ -144,7 +154,8 @@ $aside-index: 10;
 ::v-deep {
   .topnav {
     background: #fff;
-    box-shadow: 0 5px 5px rgb(51 51 51 / 10%);
+    border-bottom: 1px solid #e8e8e8;
+    box-shadow: 0 0 3px rgba(0, 0, 0, 0.25);
   }
 }
 

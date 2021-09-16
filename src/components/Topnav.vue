@@ -77,14 +77,15 @@ $color: #109790;
   > .toggleAside {
     width: 32px;
     height: 32px;
-    //background: red;
     position: absolute;
     left: 16px;
     top: 50%;
     transform: translateY(-50%);
     display: none;
-    background: fade-out(black, 0.9);
+    fill: currentColor;
+    //background: fade-out(black, 0.9);
   }
+
   @media (max-width: 500px) {
     > .menu {
       display: none;

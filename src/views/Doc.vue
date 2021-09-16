@@ -80,9 +80,10 @@ $aside-index: 10;
       position: fixed;
       top: 0;
       left: 0;
+      bottom: 0;
       margin-top: 70px;
       width: 260px;
-      height: 100%;
+      height: auto;
       overflow-x: hidden;
       overflow-y: auto;
       border-right: 1px solid #e8e8e8;
@@ -123,10 +124,10 @@ $aside-index: 10;
             &:after {
               content: "";
               position: absolute;
-              animation: .8s stretchY;
               top: 0;
               right: 0;
               height: 100%;
+              animation: .8s stretchY;
               border-right: 3px solid #109790;
             }
 

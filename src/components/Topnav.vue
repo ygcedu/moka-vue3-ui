@@ -67,6 +67,11 @@ $color: #109790;
     > li {
       margin: 0 1em;
     }
+
+    a:hover {
+      text-decoration: none;
+      border-bottom: 2px solid #46bd87;
+    }
   }
 
   > .toggleAside {

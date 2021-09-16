@@ -5,8 +5,7 @@
       <component :is="component"/>
     </div>
     <div class="demo-actions">
-      <div @click="hideCode" v-if="codeVisible">隐藏代码</div>
-      <div @click="showCode" v-else>显示代码</div>
+      <CodeBox v-model:value="codeVisible"></CodeBox>
     </div>
     <div class="demo-code" v-if="codeVisible">
         <pre class="language-html"
@@ -17,6 +16,7 @@
 
 <script lang="ts">
 import Button from '../lib/button/Button.vue';
+import CodeBox from './CodeBox.vue';
 import 'prismjs';
 import 'prismjs/themes/prism.css';
 import {computed, ref} from 'vue';
@@ -25,7 +25,7 @@ const Prism = (window as any).Prism;
 
 export default {
   components: {
-    Button
+    Button, CodeBox
   },
   props: {
     component: Object
@@ -34,10 +34,8 @@ export default {
     const html = computed(() => {
       return Prism.highlight(props.component.__sourceCode, Prism.languages.html, 'html');
     });
-    const showCode = () => codeVisible.value = true;
-    const hideCode = () => codeVisible.value = false;
     const codeVisible = ref(false);
-    return {Prism, html, codeVisible, showCode, hideCode};
+    return {Prism, html, codeVisible};
   }
 };
 </script>
@@ -62,14 +60,9 @@ $border-color: #d9d9d9;
     padding: 8px 16px;
     border-top: 1px dashed $border-color;
     color: #ccc;
-
-    > div {
-      cursor: pointer;
-      text-align: center;
-    }
+    text-align: center;
 
     &:hover {
-      color: #02bcb0;
       background-color: #f9fafc;
     }
   }

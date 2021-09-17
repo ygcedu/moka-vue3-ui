@@ -31,7 +31,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-$expand-width: 22px;
+$expand-width: 24px;
 $icon-color: #999;
 
 .code {
@@ -44,6 +44,7 @@ $icon-color: #999;
   height: $expand-width;
   width: $expand-width * 1.1;
   transition: transform 250ms;
+  transform: scale(0.8);
 
   > .arrow-left {
     position: absolute;
@@ -73,7 +74,6 @@ $icon-color: #999;
   }
 
   &:hover {
-    //transform: scale(1.2);
 
     > .arrow-left {
       border-width: 2px;

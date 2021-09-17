@@ -5,6 +5,7 @@
       <component :is="component"/>
     </div>
     <div class="demo-actions">
+      <CopyBox :sourceCode="component.__sourceCode"></CopyBox>
       <CodeBox v-model:value="codeVisible"></CodeBox>
     </div>
     <div class="demo-code" v-if="codeVisible">
@@ -17,6 +18,7 @@
 <script lang="ts">
 import Button from '../lib/button/Button.vue';
 import CodeBox from './CodeBox.vue';
+import CopyBox from './CopyBox.vue';
 import 'prismjs';
 import 'prismjs/themes/prism.css';
 import {computed, ref} from 'vue';
@@ -25,7 +27,7 @@ const Prism = (window as any).Prism;
 
 export default {
   components: {
-    Button, CodeBox
+    Button, CodeBox, CopyBox
   },
   props: {
     component: Object
@@ -61,6 +63,9 @@ $border-color: #d9d9d9;
     border-top: 1px dashed $border-color;
     color: #ccc;
     text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
     &:hover {
       background-color: #f9fafc;

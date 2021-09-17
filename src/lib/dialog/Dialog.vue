@@ -6,7 +6,9 @@
         <div class="mk-dialog">
           <header>
             <slot name="title"/>
-            <span @click="close" class="mk-dialog-close"></span>
+            <span @click="close" class="mk-dialog-close-wrapper">
+              <span class="mk-dialog-close"></span>
+            </span>
           </header>
           <main>
             <slot name="content"/>
@@ -119,30 +121,45 @@ export default {
     text-align: right;
   }
 
-  &-close {
+  &-close-wrapper {
     position: relative;
-    display: inline-block;
-    width: 16px;
-    height: 16px;
-    cursor: pointer;
 
-    &::before,
+    // 增加关闭按钮可点击范围
     &::after {
       content: '';
       position: absolute;
-      height: 1px;
-      background: black;
-      width: 100%;
-      top: 50%;
-      left: 50%;
+      // border: 1px solid red;
+      top: -13px;
+      bottom: -10px;
+      left: -15px;
+      right: -15px;
     }
 
-    &::before {
-      transform: translate(-50%, -50%) rotate(-45deg);
-    }
+    .mk-dialog-close {
+      position: relative;
+      display: inline-block;
+      width: 16px;
+      height: 16px;
+      cursor: pointer;
 
-    &::after {
-      transform: translate(-50%, -50%) rotate(45deg);
+      &::before,
+      &::after {
+        content: '';
+        position: absolute;
+        height: 1px;
+        background: black;
+        width: 100%;
+        top: 50%;
+        left: 50%;
+      }
+
+      &::before {
+        transform: translate(-50%, -50%) rotate(-45deg);
+      }
+
+      &::after {
+        transform: translate(-50%, -50%) rotate(45deg);
+      }
     }
   }
 }

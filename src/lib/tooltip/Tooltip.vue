@@ -70,7 +70,7 @@ export default {
 
 
     &.mk-tooltip-top {
-      top: -105%;
+      top: -20px;
       left: 50%;
 
       &::after {
@@ -81,7 +81,7 @@ export default {
     }
 
     &.mk-tooltip-bottom {
-      top: 180%;
+      top: 45px;
       left: 50%;
 
       &::after {

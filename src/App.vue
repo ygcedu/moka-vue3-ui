@@ -11,18 +11,18 @@ import 'nprogress/nprogress.css';
 export default {
   name: 'App',
   setup() {
-    const width = document.documentElement.clientWidth;
+    let width = document.documentElement.clientWidth;
     const asideVisible = ref(width <= 500 ? false : true);
+    provide('asideVisible', asideVisible);// set
 
     router.beforeEach((to, from, next) => {
       progress.start();
       next();
     });
 
-    provide('asideVisible', asideVisible);// set
-
     // hack: 这里不管什么路由切换都会触发隐藏侧边栏菜单效果
     router.afterEach(() => {
+      width = document.documentElement.clientWidth;
       if (width <= 500) {
         asideVisible.value = false;
       }

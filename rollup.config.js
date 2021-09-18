@@ -19,13 +19,13 @@ export default {
     plugins: [terser()]
   },
   plugins: [
-    vue({
-      include: /\.vue$/,
-    }),
     scss({
       include: /\.scss$/,
       sass: dartSass,
       prefix: `@import './src/lib/vars.scss';`,
+    }),
+    vue({
+      include: /\.vue$/,
     }),
     esbuild({
       include: /\.[jt]s$/,

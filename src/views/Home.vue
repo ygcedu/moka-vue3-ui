@@ -6,7 +6,7 @@
         <h1>Moka UI</h1>
         <h2>好看亿些些的 UI 框架</h2>
         <p class="actions">
-          <a href="https://github.com">GitHub</a>
+          <a href="https://github.com/ygcedu/moka-ui-website">GitHub</a>
           <router-link to="/doc">开始</router-link>
         </p>
       </div>
@@ -50,12 +50,13 @@ export default {
 <style lang="scss" scoped>
 $green: #02bcb0;
 $border-radius: 4px;
-$color: #109790;
+$color: #1f2225;
 
 .topnavAndBanner {
   background: linear-gradient(145deg, rgba(227, 255, 253, 1) 0%, rgba(183, 233, 230, 1) 100%);
   clip-path: ellipse(80% 60% at 50% 40%);
 }
+
 .features {
   margin: 64px auto;
   padding: 0 16px;
@@ -122,6 +123,10 @@ $color: #109790;
   align-items: center;
   flex-direction: column;
 
+  > h1 {
+    font-size: 80px;
+  }
+
   > .actions {
     padding: 8px 0;
 
@@ -135,6 +140,7 @@ $color: #109790;
 
       &:hover {
         text-decoration: none;
+        background: #02bc91;
       }
     }
   }

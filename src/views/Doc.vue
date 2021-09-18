@@ -1,8 +1,8 @@
 <template>
   <div class="layout">
     <Topnav toggleMenuButtonVisible class="nav"/>
-    <div class="content">
-      <aside :class="{visible:asideVisible}">
+    <div class="content" :class="{asideVisible}">
+      <aside>
         <h2>文档</h2>
         <ol>
           <li>
@@ -74,14 +74,28 @@ $aside-index: 10;
     display: flex;
     flex: 1;
     padding-top: 60px;
-    padding-left: 156px;
+    //padding-left: 156px;
+
+    &.asideVisible {
+      > aside {
+        transform: translateX(0px);
+      }
+
+      > main {
+        overflow: auto;
+        flex: 1;
+        padding-top: 20px;
+        padding-left: 280px;
+        padding-right: 20px;
+      }
+    }
 
     aside {
       position: fixed;
       top: 0;
       left: 0;
       bottom: 0;
-      margin-top: 70px;
+      margin-top: 64px;
       width: 260px;
       height: auto;
       overflow-x: hidden;
@@ -89,6 +103,8 @@ $aside-index: 10;
       border-right: 1px solid #e8e8e8;
       padding-bottom: 32px;
       z-index: $aside-index;
+      transition: all 0.25s ease;
+      transform: translateX(-260px);
 
       > h2 {
         margin-bottom: 4px;
@@ -112,13 +128,16 @@ $aside-index: 10;
 
             &:hover {
               background: #e5f2fa;
+              //background-image: linear-gradient(90deg, #fff, #02bc76);
               border-bottom: none;
               text-decoration: none;
             }
           }
 
           .router-link-active {
+            color: #109790;
             background-color: #e5f2fa;
+            //background-image: linear-gradient(90deg, #fff, #02bc76);
             border-right: none;
 
             &:after {
@@ -148,9 +167,8 @@ $aside-index: 10;
     main {
       overflow: auto;
       flex: 1;
-      padding-top: 20px;
-      padding-left: 130px;
-      padding-right: 20px;
+      padding: 20px;
+      margin: 0 auto;
     }
   }
 }
@@ -168,15 +186,23 @@ $aside-index: 10;
     > .content {
       padding-left: 0;
 
+      &.asideVisible {
+        > aside {
+          transform: translateX(0px);
+        }
+
+        > main {
+          overflow: auto;
+          padding: 20px 8px;
+          margin: 0 auto;
+        }
+      }
+
       aside {
         width: 180px;
         background-color: #fff;
         transition: all 0.25s ease;
         transform: translateX(-200px);
-
-        &.visible {
-          transform: translateX(0px);
-        }
       }
 
       main {

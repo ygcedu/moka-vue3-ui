@@ -4,6 +4,7 @@
       <svg class="icon">
         <use xlink:href="#icon-moka"></use>
       </svg>
+      <span>Moka UI</span>
     </router-link>
     <ul class="menu">
       <li>
@@ -11,7 +12,7 @@
       </li>
     </ul>
     <svg v-if="toggleMenuButtonVisible" class="toggleAside" @click="toggleMenu">
-      <use xlink:href="#icon-menu"></use>
+      <use :xlink:href="`#icon-menu-${asideVisible?'fold':'unfold'}`"></use>
     </svg>
   </div>
 </template>
@@ -30,7 +31,7 @@ export default {
     const toggleMenu = () => {
       asideVisible.value = !asideVisible.value;
     };
-    return {toggleMenu};
+    return {toggleMenu, asideVisible};
   },
 };
 </script>
@@ -50,12 +51,24 @@ $color: #109790;
   align-items: center;
 
   > .logo {
-    max-width: 6em;
+    max-width: 8em;
     margin-right: auto;
+    font-size: 18px;
+    color: #1f2225;
+    display: flex;
+    align-items: center;
 
     > svg {
       width: 32px;
       height: 32px;
+    }
+
+    > span {
+      margin-left: 10px;
+    }
+
+    &:hover {
+      text-decoration: none;
     }
   }
 
@@ -78,10 +91,11 @@ $color: #109790;
     width: 32px;
     height: 32px;
     position: absolute;
-    left: 16px;
+    left: 140px;
+
     top: 50%;
     transform: translateY(-50%);
-    display: none;
+    //display: none;
     fill: currentColor;
     //background: fade-out(black, 0.9);
   }
@@ -95,6 +109,7 @@ $color: #109790;
     }
     > .toggleAside {
       display: inline-block;
+      left: 16px;
     }
   }
 }

@@ -1,8 +1,8 @@
 <template>
   <div class="layout">
-    <Topnav toggleMenuButtonVisible class="nav"/>
+    <Topnav toggleMenuButtonVisible class="nav noselect"/>
     <div class="content" :class="{asideVisible}">
-      <aside>
+      <aside class="noselect">
         <h2>文档</h2>
         <ol>
           <li>

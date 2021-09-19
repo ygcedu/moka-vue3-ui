@@ -58,15 +58,13 @@ export default {
         params: 'ok',
         desc: '确认触发函数',
         type: 'function',
-        optionals: '()=>{}',
-        default: '--',
+        optionals: '()=>{}'
       },
       {
         params: 'cancel',
         desc: '取消触发函数',
         type: 'function',
-        optionals: '()=>{}',
-        default: '--',
+        optionals: '()=>{}'
       },
     ]);
     return {

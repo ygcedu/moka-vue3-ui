@@ -21,8 +21,7 @@ export default {
         params: 'tab-item',
         desc: 'tab页签',
         type: 'component',
-        optionals: 'tab-item',
-        default: '--',
+        optionals: 'tab-item'
       },
     ]);
     return {

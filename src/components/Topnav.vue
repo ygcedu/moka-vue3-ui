@@ -8,6 +8,9 @@
     </router-link>
     <ul class="menu">
       <li>
+        <a href="https://juejin.cn/user/1284661815293975">博客</a>
+      </li>
+      <li>
         <router-link to="/doc">文档</router-link>
       </li>
     </ul>
@@ -78,7 +81,7 @@ $color: #109790;
     flex-wrap: nowrap;
 
     > li {
-      margin: 0 1em;
+      margin: 0 0.5em;
     }
 
     a:hover {

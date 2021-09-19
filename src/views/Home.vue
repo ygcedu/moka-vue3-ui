@@ -6,8 +6,8 @@
         <h1>Moka UI</h1>
         <h2>一个简洁的 Vue3 组件库</h2>
         <p class="actions">
-          <a href="https://github.com/ygcedu/moka-ui-website">GitHub</a>
-          <router-link to="/doc">开始</router-link>
+          <a href="https://github.com/ygcedu/moka-vue3-ui-website">GitHub</a>
+          <router-link to="/doc">开始使用</router-link>
         </p>
       </div>
     </div>

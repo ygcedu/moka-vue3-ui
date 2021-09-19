@@ -15,28 +15,31 @@
             <router-link to="/doc/get-started">开始使用</router-link>
           </li>
         </ol>
-        <h2>组件列表</h2>
+        <h2>{{ '组件列表' }}</h2>
         <ol>
           <li>
-            <router-link to="/doc/switch">Switch 组件</router-link>
+            <router-link to="/doc/switch">Switch 开关</router-link>
           </li>
           <li>
-            <router-link to="/doc/switch2">Switch2 组件</router-link>
+            <router-link to="/doc/switch2">Switch2 开关</router-link>
           </li>
           <li>
-            <router-link to="/doc/switch3">Switch3 组件</router-link>
+            <router-link to="/doc/switch3">Switch3 开关</router-link>
           </li>
           <li>
-            <router-link to="/doc/button">Button 组件</router-link>
+            <router-link to="/doc/input">Input 输入框</router-link>
           </li>
           <li>
-            <router-link to="/doc/dialog">Dialog 组件</router-link>
+            <router-link to="/doc/button">Button 按钮</router-link>
           </li>
           <li>
-            <router-link to="/doc/tabs">Tabs 组件</router-link>
+            <router-link to="/doc/dialog">Dialog 弹出框</router-link>
           </li>
           <li>
-            <router-link to="/doc/tooltip">Tooltip 组件</router-link>
+            <router-link to="/doc/tabs">Tabs 标签页</router-link>
+          </li>
+          <li>
+            <router-link to="/doc/tooltip">Tooltip 文字提示</router-link>
           </li>
         </ol>
       </aside>
@@ -49,12 +52,13 @@
 <script lang="ts">
 import Topnav from '../components/Topnav.vue';
 import {inject, Ref} from 'vue';
+import {titles} from '../menu-options';
 
 export default {
   components: {Topnav},
   setup() {
     const asideVisible = inject<Ref<boolean>>('asideVisible'); // get
-    return {asideVisible};
+    return {asideVisible, titles};
   },
 };
 </script>
@@ -173,12 +177,10 @@ $aside-index: 10;
   }
 }
 
-::v-deep {
-  .topnav {
-    background: #fff;
-    border-bottom: 1px solid #e8e8e8;
-    box-shadow: 0 0 3px rgba(0, 0, 0, 0.25);
-  }
+::v-deep(.topnav) {
+  background: #fff;
+  border-bottom: 1px solid #e8e8e8;
+  box-shadow: 0 0 3px rgba(0, 0, 0, 0.25);
 }
 
 @media (max-width: 500px) {

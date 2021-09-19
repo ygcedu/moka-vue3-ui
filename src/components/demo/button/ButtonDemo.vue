@@ -29,7 +29,7 @@ export default {
     const data = ref([
       {
         params: 'theme',
-        desc: '按钮颜色',
+        desc: '按钮类型',
         type: 'string',
         optionals: 'primary / warning / success / danger / info / link',
         default: 'default',

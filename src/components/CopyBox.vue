@@ -1,5 +1,5 @@
 <template>
-  <Tooltip :content="tip">
+  <Tooltip :content="tip" class="noselect">
     <span class="code-copy" @click="copy" @mouseout="clear"
           data-clipboard-action="copy"
           :data-clipboard-text="sourceCode">

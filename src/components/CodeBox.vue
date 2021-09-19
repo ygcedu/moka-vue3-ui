@@ -1,5 +1,5 @@
 <template>
-  <Tooltip :content="tip">
+  <Tooltip :content="tip" class="noselect">
     <div class="code-read" @click="toggle" :class="{'mk-code-expand':value}">
       <svg class="icon" v-if="value">
         <use xlink:href="#icon-code-alt"></use>

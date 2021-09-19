@@ -44,6 +44,8 @@ export default {
 
 <style lang="scss" scoped>
 $border-color: #d9d9d9;
+$icon-color: #999;
+
 .demo {
   border: 1px solid $border-color;
   margin: 16px 0 32px;
@@ -61,7 +63,7 @@ $border-color: #d9d9d9;
   &-actions {
     padding: 8px 16px;
     border-top: 1px dashed $border-color;
-    color: #ccc;
+    color: $icon-color;
     text-align: center;
     display: flex;
     justify-content: center;

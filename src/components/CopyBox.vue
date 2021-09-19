@@ -1,16 +1,16 @@
 <template>
-<span class="code-copy" @click="copy" @mouseout="clear"
-      data-clipboard-action="copy"
-      :data-clipboard-text="sourceCode">
   <Tooltip :content="tip">
-    <svg class="icon" v-if="copied">
-      <use xlink:href="#icon-success"></use>
-    </svg>
-    <svg class="icon" v-else>
-      <use xlink:href="#icon-copy"></use>
-    </svg>
+    <span class="code-copy" @click="copy" @mouseout="clear"
+          data-clipboard-action="copy"
+          :data-clipboard-text="sourceCode">
+      <svg class="icon" v-if="copied">
+        <use xlink:href="#icon-success"></use>
+      </svg>
+      <svg class="icon" v-else>
+        <use xlink:href="#icon-copy"></use>
+      </svg>
+    </span>
   </Tooltip>
-</span>
 </template>
 
 <script lang="ts">
@@ -56,13 +56,14 @@ export default {
 
 <style lang="scss" scoped>
 .code-copy {
+  cursor: pointer;
   display: flex;
   align-items: center;
-  margin-right: 15px;
+  margin: 0 5px;
 
   .icon {
-    width: 16px;
-    height: 16px;
+    width: 32px;
+    height: 32px;
   }
 
   &:hover {

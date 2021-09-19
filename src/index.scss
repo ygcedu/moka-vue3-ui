@@ -45,24 +45,26 @@ body {
   user-select: none; /* Non-prefixed version, currently not supported by any browser */
 }
 
+$scrollbar: 5px;
+
 ::-webkit-scrollbar {
-  width: 5px;
-  height: 5px;
+  width: $scrollbar;
+  height: $scrollbar;
 }
 
 ::-webkit-scrollbar-track-piece {
   background-color: rgba(0, 0, 0, 0.2);
-  -webkit-border-radius: 6px;
+  -webkit-border-radius: $scrollbar + 1;
 }
 
 ::-webkit-scrollbar-thumb:vertical {
-  height: 5px;
+  height: $scrollbar;
   background-color: rgba(125, 125, 125, 0.7);
-  -webkit-border-radius: 6px;
+  -webkit-border-radius: $scrollbar + 1;
 }
 
 ::-webkit-scrollbar-thumb:horizontal {
-  width: 5px;
+  width: $scrollbar;
   background-color: rgba(125, 125, 125, 0.7);
-  -webkit-border-radius: 6px;
+  -webkit-border-radius: $scrollbar + 1;
 }

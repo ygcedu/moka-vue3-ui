@@ -7,7 +7,7 @@ rm -rf dist &&
   git add . &&
   git commit -m "deploy" &&
   git branch -M master &&
-  git remote add origin git@github.com:ygcedu/moka-ui-website.git &&
+  git remote add origin git@github.com:ygcedu/moka-vue3-ui-website.git &&
   git push -f -u origin master &&
   cd -
-echo https://ygcedu.github.io/moka-ui-website/index.html
+echo https://ygcedu.github.io/moka-vue3-ui-website/index.html

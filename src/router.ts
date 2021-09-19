@@ -13,6 +13,8 @@ import install from './markdown/install.md';
 import Switch2Demo from './components/demo/switch/Switch2Demo.vue';
 import Switch3Demo from './components/demo/switch/Switch3Demo.vue';
 import TooltipDemo from './components/demo/tooltip/TooltipDemo.vue';
+import InputDemo from './components/demo/input/InputDemo.vue';
+import RadioDemo from './components/demo/radio/RadioDemo.vue';
 
 const history = createWebHashHistory();
 const md = string => h(Markdown, {content: string, key: string});
@@ -31,10 +33,12 @@ export const router = createRouter({
         {path: 'switch', component: SwitchDemo},
         {path: 'switch2', component: Switch2Demo},
         {path: 'switch3', component: Switch3Demo},
+        {path: 'input', component: InputDemo},
         {path: 'button', component: ButtonDemo},
         {path: 'dialog', component: DialogDemo},
         {path: 'tabs', component: TabsDemo},
-        {path: 'tooltip', component: TooltipDemo}
+        {path: 'tooltip', component: TooltipDemo},
+        {path: 'radio', component: RadioDemo}
       ]
     }
   ]

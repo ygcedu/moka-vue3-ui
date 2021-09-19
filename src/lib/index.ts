@@ -8,4 +8,5 @@ export {default as Dialog} from './dialog/Dialog.vue';
 export {openDialog as openDialog} from './dialog/openDialog';
 export {default as Tooltip} from './tooltip/Tooltip.vue';
 export {default as Input} from './input/Input.vue';
+export {default as Radio} from './radio/Radio.vue';
 export {titles} from './data';

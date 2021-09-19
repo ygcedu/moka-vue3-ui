@@ -33,6 +33,9 @@
             <router-link to="/doc/button">Button 按钮</router-link>
           </li>
           <li>
+            <router-link to="/doc/radio">Radio 单选框</router-link>
+          </li>
+          <li>
             <router-link to="/doc/dialog">Dialog 弹出框</router-link>
           </li>
           <li>

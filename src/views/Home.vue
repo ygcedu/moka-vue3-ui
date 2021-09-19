@@ -4,7 +4,7 @@
       <Topnav/>
       <div class="banner">
         <h1>Moka UI</h1>
-        <h2>好看亿些些的 UI 框架</h2>
+        <h2>一个简洁的 Vue3 组件库</h2>
         <p class="actions">
           <a href="https://github.com/ygcedu/moka-ui-website">GitHub</a>
           <router-link to="/doc">开始</router-link>
@@ -55,6 +55,12 @@ $color: #1f2225;
 .topnavAndBanner {
   background: linear-gradient(145deg, rgba(227, 255, 253, 1) 0%, rgba(183, 233, 230, 1) 100%);
   clip-path: ellipse(80% 60% at 50% 40%);
+}
+
+@media (max-width: 500px) {
+  ::v-deep(.topnav) > .logo {
+    display: none;
+  }
 }
 
 .features {
@@ -124,7 +130,8 @@ $color: #1f2225;
   flex-direction: column;
 
   > h1 {
-    font-size: 80px;
+    font-family: Metropolis, sans-serif;
+    font-size: 66px;
   }
 
   > .actions {
